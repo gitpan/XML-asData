@@ -1,0 +1,21 @@
+--- #YAML:1.0
+name: XML-asData
+version: 20.1
+license: perl
+distribution_type: module
+requires:
+  Class::Accessor::Fast: 0
+  Clone: 0
+  Encode: 0
+  Error: 0
+  Scalar::Util: 0
+  Test::Exception: 0
+  XML::LibXML: 0
+recommends: {}
+build_requires: {}
+conflicts: {}
+provides:
+  XML::asData:
+    file: lib/XML/asData.pm
+    version: 20.1
+generated_by: Module::Build version 0.21

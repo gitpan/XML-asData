@@ -1,0 +1,56 @@
+NAME
+    XML::asData - serialise data structures to XML and back again
+
+SYNOPSIS
+      use XML::asData;
+      my $x     = XML::asData->new;
+
+      my $data  = ... ; # some data structure
+      my $xml   = $x->as_xml($data);
+      my $data2 = $x->as_data($xml);
+
+DESCRIPTION
+    The module takes a Perl data structure and outputs XML representing that
+    structure. It can of course also do the reverse. This is somewhat
+    similar to XML::Simple, except that it uses XML::LibXML to do its dirty
+    work (which is fast). Also, the module makes sure to use UTF8 in the
+    XML.
+
+METHODS
+  new
+    This is the constructor.
+
+      my $x = XML::asData->new;
+
+  as_xml($data)
+    This takes a Perl data structure and returns XML.
+
+      my $xml = $x->as_xml($data);
+
+  as_data($xml)
+    This takes XML output by this module and turns it back into a Perl data
+    structure.
+
+  root($name)
+    This sets the root element name in the XML. It defaults to "envelope".
+
+      $x->root('sexy');
+
+  objects($bool)
+    This sets whether the module should serialize and deserialize objects.
+    You might want to disable this. It defaults to true.
+
+      $x->objects(0);
+
+AUTHOR
+    Leon Brocard, acme@astray.com
+
+COPYRIGHT
+    Copyright 2004 Fotango. All Rights Reserved.
+
+    This module is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+SEE ALSO
+    XML::Simple
+
